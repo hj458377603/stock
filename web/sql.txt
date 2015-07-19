@@ -1,0 +1,21 @@
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(45) DEFAULT NULL,
+  `pwd` varchar(45) DEFAULT NULL,
+  `state` tinyint(2) DEFAULT NULL COMMENT '-1:未授权,1：授权,2:授权到期',
+  `authDate` date DEFAULT NULL COMMENT '授权日期',
+  `availableDays` int(11) DEFAULT '0' COMMENT '授权有效期（天）',
+  `createTime` date DEFAULT NULL,
+  `modifyTime` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `recommendation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ups_downs` double DEFAULT NULL COMMENT '涨跌幅',
+  `sz_ups_downs` double DEFAULT NULL COMMENT '上证指数涨跌幅',
+  `ps` varchar(100) DEFAULT NULL COMMENT '附言，大盘判断',
+  `stocks` varchar(300) DEFAULT NULL COMMENT '股票名称',
+  `createTime` datetime DEFAULT NULL COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;

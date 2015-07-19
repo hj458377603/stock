@@ -1,0 +1,54 @@
+body {
+	padding: 0;
+	background: #f8f8f8;
+}
+
+#nav-search {
+	border-color: #666 !important;
+	color: #666
+}
+
+#nav-search2 {
+	border-color: #fff !important;
+	color: #fff;
+}
+
+#nav-search2::-webkit-input-placeholder {
+	color: #fff
+}
+
+#nav-search2:-moz-placeholder {
+	color: #fff;
+	opacity: 1
+}
+
+#nav-search2::-moz-placeholder {
+	color: #fff;
+	opacity: 1
+}
+
+#nav-search2:-ms-input-placeholder {
+	color: #fff
+}
+
+.navbar-form .btn {
+	border-color: #666 !important;
+	color: #666;
+	background: none;
+}
+
+.footer {
+        padding: 20px 0;
+        width: 100%;
+        color: #666;
+    }
+
+    .footer a, .footer p {
+        font-size: 12px;
+        cursor: pointer;
+        color: #999;
+    }
+
+    .footer a {
+        text-decoration: none;
+    }

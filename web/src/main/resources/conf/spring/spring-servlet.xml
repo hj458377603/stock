@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- 指定自动扫描路径 -->
+	<context:component-scan base-package="org.dream"></context:component-scan>
+	<bean id="propertyConfig"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:conf/db.properties</value>
+				<value>classpath:conf/main.properties</value>
+			</list>
+		</property>
+	</bean>
+	<mvc:annotation-driven />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/private/*/*" />
+			<mvc:mapping path="/*/private/*" />
+			<mvc:mapping path="/*/private/*/*" />
+			<mvc:mapping path="/*/*/private/*" />
+			<bean class="org.dream.interceptors.LoginInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<mvc:resources location="/img/" mapping="/img/**"></mvc:resources>
+	<!-- HttpServletRequest无法转换为MultipartHttpServletRequest -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- set the max upload size100MB -->
+		<property name="maxUploadSize">
+			<value>104857600</value>
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<!-- targetObject确定目标Bean，指定调用哪个Bean -->
+		<property name="targetObject" ref="validatorService" />
+		<!-- targetMethod确定目标方法，指定调用目标Bean的哪个方法 -->
+		<property name="targetMethod" value="registerValidator" />
+		<property name="arguments">
+			<list>
+				<ref bean="emailValidator" />
+				<ref bean="pwdValidator" />
+				<ref bean="nicknameValidator" />
+				<ref bean="imageUrlsValidator" />
+				<ref bean="txtContentValidator" />
+				<ref bean="commentValidator" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 配置Freemarker屬性文件路徑 -->
+	<bean id="freemarkerConfiguration"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:conf/freemarker.properties" />
+	</bean>
+	<!-- 配置freeMarker模板加載地址 -->
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<!-- 視圖解析器會在/WEB-INF/ftl/路徑下掃描視圖文件 -->
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+	</bean>
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+	<!-- 配置freeMarker視圖解析器 -->
+	<bean id="freemakerViewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<!-- 掃描路徑內所有以ftl結尾的文件 -->
+		<property name="viewNames">
+			<array>
+				<value>*.ftl</value>
+			</array>
+		</property>
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="requestContextAttribute" value="request" />
+		<!-- 給視圖解析器配置優先級，你可以給之前jsp視圖解析器的值配為2 -->
+		<property name="order" value="1" />
+	</bean>
+</beans>

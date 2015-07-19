@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dream.dao.account.AccountDao">
+	<select id="queryByUserNameAndPwd" parameterType="java.util.Map"
+		resultType="org.dream.bean.account.Account">
+		SELECT
+		id,email,state,authDate,availableDays,createTime
+		FROM account
+		WHERE
+		email=#{email}
+		AND
+		pwd=#{pwd}
+	</select>
+
+	<select id="queryByEmail" parameterType="java.util.Map"
+		resultType="org.dream.bean.account.Account">
+		SELECT
+			id,
+			email,
+			state,
+			authDate,
+			availableDays,
+			createTime,
+			modifyTime
+		FROM
+		account
+		WHERE
+		email=#{email}
+	</select>
+
+	<select id="isExsit" parameterType="java.util.Map" resultType="java.lang.Integer">
+		SELECT
+		Count(id)
+		FROM
+		account
+		WHERE
+		email=#{email}
+	</select>
+
+	<insert id="add" parameterType="org.dream.bean.account.Account" useGeneratedKeys="true">
+		INSERT INTO
+		account
+		(
+		email,
+		pwd,
+		state,
+		createTime
+		)
+		VALUES
+		(
+		#{email},
+		#{pwd},
+		#{state},
+		#{createTime}
+		)
+	</insert>
+
+	<update id="update" parameterType="org.dream.bean.account.Account">
+		UPDATE
+		account
+		<set>
+			<if test="pwd!=null">
+				pwd=#{pwd},
+			</if>
+			<if test="authDate!=null">
+				authDate=#{authDate},
+			</if>
+			<if test="availableDays!=0">
+				availableDays=#{availableDays},
+			</if>
+			<if test="modifyTime!=null">
+				modifyTime=#{modifyTime},
+			</if>
+			<if test="state!=0">
+				state=#{state}
+			</if>
+		</set>
+		WHERE
+			email =#{email}
+	</update>
+</mapper>  

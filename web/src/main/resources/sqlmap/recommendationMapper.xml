@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.dream.dao.recommendation.RecommendationDao">
+	<resultMap id="recommendationMap" type="org.dream.bean.recommendation.Recommendation">
+		<id property="id" column="id" />
+		<result property="upsDowns" column="ups_downs" />
+		<result property="szUpsDowns" column="sz_ups_downs" />
+		<result property="ps" column="ps" />
+		<result property="stocks" column="stocks" />
+		<result property="createTime" column="createTime" />
+	</resultMap>
+
+	<select id="queryRecommendationsByPage" parameterType="java.util.Map" resultMap="recommendationMap">
+		SELECT
+		id,
+		ups_downs,
+		sz_ups_downs,
+		ps,
+		stocks,
+		createTime
+		FROM
+		recommendation
+		LIMIT #{startIndex},#{pageSize}
+	</select>
+</mapper>  
