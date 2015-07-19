@@ -1,6 +1,7 @@
 package org.dream.web.controller.account;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,8 @@ import org.dream.bean.constants.ConfigConstants;
 import org.dream.bean.constants.MsgConstants;
 import org.dream.bean.errorcode.ErrorCode;
 import org.dream.bean.exception.StockException;
+import org.dream.bean.recommendation.Recommendation;
+import org.dream.service.base.intf.recommendation.RecommendationService;
 import org.dream.service.biz.intf.account.AccountBizService;
 import org.dream.web.controller.base.BaseController;
 import org.slf4j.Logger;
@@ -28,12 +31,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since [产品/模块版本] （可选）
  */
 @Controller
-@RequestMapping("/account")
+@RequestMapping("/")
 public class AccountController extends BaseController {
-    private static Logger logger = LoggerFactory.getLogger(AccountController.class);
+    private static Logger    logger   = LoggerFactory.getLogger(AccountController.class);
+
+    private static final int PAGESIZE = 10;
 
     @Autowired
-    AccountBizService     accountBizService;
+    AccountBizService        accountBizService;
+
+    @Autowired
+    RecommendationService    recommendationService;
 
     /**
      * 首页
@@ -53,6 +61,8 @@ public class AccountController extends BaseController {
         if (account != null) {
             modelMap.addAttribute(ConfigConstants.ACCOUNT, account);
         }
+        List<Recommendation> recommendations = recommendationService.queryByPage(1, PAGESIZE);
+        modelMap.addAttribute("recommendations", recommendations);
         return "index.ftl";
     }
 

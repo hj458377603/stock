@@ -188,35 +188,35 @@
                                 <th>选股时间</th>
                                 <th>平均涨幅(%)</th>
                                 <th>沪深300(%)</th>
+                                <th>大盘预警</th>
                                 <th>股票</th>
                             </tr>
                         </thead>
                         <tbody id="contentTable">
-                            <tr><td>2015-06-05</td><td class="text-success">-0.76</td><td class="text-danger">2</td><td>恒丰纸业 新钢股份 本钢板材</td></tr>
-                            <tr><td>2015-05-29</td><td><span class="label label-danger">27.4</span></td><td class="text-danger">8.05</td><td>恒丰纸业 惠泉啤酒 本钢板材</td></tr>
-                            <tr><td>2015-05-22</td><td class="text-danger">3.02</td><td class="text-success">-2.23</td><td>新钢股份 吉林高速 本钢板材</td></tr>
-                            <tr><td>2015-05-15</td><td><span class="label label-danger">19.87</span></td><td class="text-danger">7.23</td><td>惠泉啤酒 新钢股份 同力水泥</td></tr>
-                            <tr><td>2015-05-08</td><td><span class="label label-danger">11.49</span></td><td class="text-danger">1.25</td><td>惠泉啤酒 南风化工 新野纺织</td></tr>
-                            <tr><td>2015-04-30</td><td class="text-success">-0.91</td><td class="text-success">-4.03</td><td>恒丰纸业 同力水泥 新野纺织</td></tr>
-                            <tr><td>2015-04-24</td><td class="text-success">-3.93</td><td class="text-danger">1</td><td>恒丰纸业 本钢板材 新野纺织</td></tr>
-                            <tr><td>2015-04-17</td><td><span class="label label-danger">16.79</span></td><td class="text-danger">2.32</td><td>华联综超 汉商集团 南风化工</td></tr>
-                            <tr><td>2015-04-10</td><td class="text-danger">5.51</td><td class="text-danger">5.79</td><td>华电能源 成商集团 柳钢股份</td></tr>
-                            <tr><td>2015-04-03</td><td class="text-danger">9.22</td><td class="text-danger">4.17</td><td>恒丰纸业 柳钢股份 本钢板材</td></tr>
-                            <tr><td>2015-03-27</td><td><span class="label label-danger">13.6</span></td><td class="text-danger">5.01</td><td>恒丰纸业 鲁北化工 三钢闽光</td></tr>
-                            <tr><td>2015-03-20</td><td class="text-danger">9.01</td><td class="text-danger">2.03</td><td>恒丰纸业 汉商集团 柳钢股份</td></tr>
-                            <tr><td>2015-03-13</td><td><span class="label label-danger">17.73</span></td><td class="text-danger">7.6</td><td>中原高速 恒丰纸业 吉林高速</td></tr>
-                            <tr><td>2015-03-06</td><td class="text-danger">2.22</td><td class="text-danger">4</td><td>恒丰纸业 华电能源 吉林高速</td></tr>
-                            <tr><td>2015-02-27</td><td class="text-danger">2.25</td><td class="text-success">-2.64</td><td>大龙地产 吉林高速 新野纺织</td></tr>
-                            <tr><td>2015-02-17</td><td class="text-danger">1.6</td><td class="text-danger">1.43</td><td>国栋建设 江南高纤 江苏索普</td></tr>
-                            <tr><td>2015-02-13</td><td class="text-danger">1.75</td><td class="text-danger">1.51</td><td>大龙地产 方大化工 丰东股份</td></tr>
-                            <tr><td>2015-02-06</td><td class="text-danger">6.31</td><td class="text-danger">4.75</td><td>吉林高速 三钢闽光 丰东股份</td></tr>
-                            <tr><td>2015-01-30</td><td class="text-success">-3.7</td><td class="text-success">-3.55</td><td>三房巷 栖霞建设 新野纺织</td></tr>
-                            <tr><td>2015-01-23</td><td class="text-danger">2.5</td><td class="text-success">-3.85</td><td>三房巷 鲁北化工 新野纺织</td></tr>
-                            <tr><td>2015-01-16</td><td class="text-danger">6.12</td><td class="text-success">-1.74</td><td>三房巷 鲁北化工 达 意 隆</td></tr>
-                            <tr><td>2015-01-09</td><td class="text-danger">1.08</td><td class="text-danger">2.49</td><td>鲁北化工 江苏索普 通润装备</td></tr>
-                            <tr><td>2014-12-31</td><td class="text-danger">0.98</td><td class="text-danger">0.37</td><td>大港股份 新野纺织 长江润发</td></tr>
-                            <tr><td>2014-12-26</td><td class="text-success">-2.05</td><td class="text-danger">2.55</td><td>金鹰股份 通润装备 丰东股份</td></tr>
-                            <tr><td>2014-12-19</td><td class="text-success">-2.08</td><td class="text-danger">1.85</td><td>鲁北化工 新野纺织 通润装备</td></tr>
+                        	<#if (recommendations??&&recommendations?size>0)>
+                        		<#list recommendations as recommendation>
+                        			<tr>
+                        				<td>${recommendation.createTime?string("yyyy-MM-dd")}</td>
+                        				<#if (recommendation.upsDowns<0)>
+	                        				<td class="text-success">${recommendation.upsDowns}</td>
+	                        			<#elseif (recommendation.upsDowns<10)>
+	                        				<td class="text-danger">${recommendation.upsDowns}</td>
+	                        			<#else>
+	                        				<td><span class="label label-danger">${recommendation.upsDowns}</span></td>
+	                        			</#if>
+	                        			
+	                        			<#if (recommendation.szUpsDowns<0)>
+	                        				<td class="text-success">${recommendation.szUpsDowns}</td>
+	                        			<#elseif (recommendation.szUpsDowns<10)>
+	                        				<td class="text-danger">${recommendation.szUpsDowns}</td>
+	                        			<#else>
+	                        				<td><span class="label label-danger">${recommendation.szUpsDowns}</span></td>
+	                        			</#if>
+	                        			<td><#if recommendation.ps??><span class="label label-danger">${recommendation.ps}</span></#if></td>
+	                        			<td>${recommendation.stocks}</td>
+	                        		</tr>	                        		
+                        		</#list>
+                        	</#if>	                            
                         </tbody>
                     </table>
                 </div>
