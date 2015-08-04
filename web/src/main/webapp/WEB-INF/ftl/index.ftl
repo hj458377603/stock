@@ -172,7 +172,7 @@
         <div class="row">
             <div class="card2">
                 <div class="p text-center">
-                    <a href="http://www.yucezhe.com/beta/public/strategy-1#login-modal" data-target="#login-modal" data-toggle="modal">已订购用户点此登陆查看最新选股</a>
+                    <a href="#" data-target="#login-modal" data-toggle="modal">已订购用户点此登陆查看最新选股</a>
                 </div>
             </div>
         </div>
@@ -243,7 +243,7 @@
                     <h3 style="margin: 5px;">登录</h3>
                 </div>
                 <div class="p2">
-                    <form class="form-horizontal" action="/web/account/home" method="post" id="login_form">
+                    <form class="form-horizontal" action="/web/home" method="post" id="login_form">
                         <div class="text-center">
                             <p class="text-danger"></p>
                         </div>

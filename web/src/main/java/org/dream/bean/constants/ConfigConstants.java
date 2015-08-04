@@ -20,7 +20,7 @@ public class ConfigConstants {
 
     public static final String ROOT_CONTEXT              = "/web";                          // 根上下文
 
-    public static final String HOME_PAGE                 = DOMAIN + "/web/account/home";    // 首页
+    public static final String HOME_PAGE                 = DOMAIN + "/web/home";    // 首页
 
     public static final String LOGIN_PAGE                = DOMAIN + "/web/account/login";   // 登录页面
 

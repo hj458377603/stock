@@ -4,7 +4,8 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:conf/spring/spring-bean.xml
+			classpath:conf/spring/spring-bean.xml,
+			classpath*:conf/spring/applicationContext-captcha.xml
 		</param-value>
 	</context-param>
 	<listener>
