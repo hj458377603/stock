@@ -34,13 +34,11 @@ public class VerificationCodeController extends BaseController {
     ImageCaptchaService imageCaptchaService;
 
     @RequestMapping(value = "/getCode")
-    public void getCode(HttpServletRequest request, HttpServletResponse response) {
+    public void getCode(String uuid,HttpServletRequest request, HttpServletResponse response) {
         try {
             ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
-            String captchaId = request.getSession().getId();
-            BufferedImage challenge = imageCaptchaService.getImageChallengeForID(captchaId,
+            BufferedImage challenge = imageCaptchaService.getImageChallengeForID(uuid,
                     request.getLocale());
-
             response.setHeader("Cache-Control", "no-store");
             response.setHeader("Pragma", "no-cache");
             response.setDateHeader("Expires", 0L);
@@ -56,5 +54,11 @@ public class VerificationCodeController extends BaseController {
         } catch (IOException e) {
             logger.error("generate captcha image error: {}", e.getMessage());
         }
+    }
+    
+    @RequestMapping(value = "/validateCode")
+    public void validateCode(String uuid,String code,HttpServletRequest request, HttpServletResponse response) {
+        boolean isvalid= imageCaptchaService.validateResponseForID(uuid, code);
+        System.out.println(isvalid);
     }
 }
