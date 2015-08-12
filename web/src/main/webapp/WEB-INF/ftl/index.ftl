@@ -5,19 +5,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="苏州凯安投资管理有限公司">
     <link rel="shortcut icon" href="http://www.yucezhe.com/img/favicon-32.png">
-
-    <title>大数据选股｜预测者网</title>
-
+    <title></title>
     <link rel="stylesheet" type="text/css" href="/web/static/css/datetimepicker.css">
     <!-- Bootstrap core CSS -->
     <link href="/web/static/css/bootstrap.css" type="text/css" rel="stylesheet">
     <!-- Custom styles for this template -->
-
     <link href="/web/static/css/wp.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/web/static/css/base.css">
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -59,9 +54,9 @@
 				                    </p>
 				                </a>
 				                <ul class="dropdown-menu" role="menu">
-				                    <li><a href="/web/account/resetPwd"><i class="fa fa-bell"></i>修改密码</a></li>
+				                    <li><a href="/web/resetPwd"><i class="fa fa-bell"></i>修改密码</a></li>
 				                    <li class="divider"></li>
-				                    <li><a href="/web/account/logout"><i class="fa fa-sign-out"></i> 登出</a></li>
+				                    <li><a href="/web/logout"><i class="fa fa-sign-out"></i> 登出</a></li>
 				                </ul>
 				            </li>
 				    </ul>
@@ -272,7 +267,7 @@
                     </form>
                 </div>
                 <div class="p4 text-center">
-                    <a href="/web/account/reg"><i class="fa fa-plus-square"></i> 没有账号？注册一个</a>
+                    <a href="/web/reg"><i class="fa fa-plus-square"></i> 没有账号？注册一个</a>
                 </div>
             </div>
         </div>

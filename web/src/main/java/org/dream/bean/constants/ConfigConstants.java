@@ -22,11 +22,11 @@ public class ConfigConstants {
 
     public static final String HOME_PAGE                 = DOMAIN + "/web/home";    // 首页
 
-    public static final String LOGIN_PAGE                = DOMAIN + "/web/account/login";   // 登录页面
+    public static final String LOGIN_PAGE                = DOMAIN + "/web/login";   // 登录页面
 
-    public static final String REG_PAGE                  = DOMAIN + "/web/account/reg";     // 注册页面
+    public static final String REG_PAGE                  = DOMAIN + "/web/reg";     // 注册页面
 
-    public static final String RESET_PWD_PAGE            = DOMAIN + "/web/account/resetPwd"; // 重置密码
+    public static final String RESET_PWD_PAGE            = DOMAIN + "/web/resetPwd"; // 重置密码
 
     public static final String MSG                       = "msg";
 

@@ -5,11 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="苏州凯安投资管理有限公司">
     <link rel="shortcut icon" href="http://www.yucezhe.com/img/favicon-32.png">
-
-    <title>大数据选股｜预测者网</title>
-
     <link rel="stylesheet" type="text/css" href="/web/static/css/datetimepicker.css">
     <!-- Bootstrap core CSS -->
     <link href="/web/static/css/bootstrap.css" type="text/css" rel="stylesheet">
@@ -38,7 +34,7 @@
                     <h3 style="margin: 5px;">登录</h3>
                 </div>
                 <div class="p2">
-                    <form class="form-horizontal" action="/web/account/home" method="post" id="login_form">
+                    <form class="form-horizontal" action="/web/home" method="post" id="login_form">
                         <div class="text-center">
                             <p class="text-danger">${msg}</p>
                         </div>
@@ -67,7 +63,7 @@
                     </form>
                 </div>
                 <div class="p4 text-center">
-                    <a href="/web/account/reg"><i class="fa fa-plus-square"></i> 没有账号？注册一个</a>
+                    <a href="/web/reg"><i class="fa fa-plus-square"></i> 没有账号？注册一个</a>
                 </div>
             </div>
 </body>

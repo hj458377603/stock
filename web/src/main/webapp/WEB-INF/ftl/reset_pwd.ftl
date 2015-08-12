@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="baidu-site-verification" content="82BCq1fYkY">
-    <meta name="description" content="预测者网汇集专业卖方分析师、知名财经人士、民间投资高手以及更多个人投资者的金融预测，并统计准确率，是一个开放的金融预测平台。通过深度挖掘全部预测数据，致力于帮助投资者实时把握市场整体舆情动态，发现真正有洞察力的预测者。">
-    <meta name="author" content="苏州凯安投资管理有限公司">
     <link rel="shortcut icon" href="http://www.yucezhe.com/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="http://www.yucezhe.com/img/ios/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="http://www.yucezhe.com/img/ios/apple-touch-icon-57x57.png">
@@ -20,7 +18,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="http://www.yucezhe.com/img/ios/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="http://www.yucezhe.com/img/ios/apple-touch-icon-152x152.png">
     <link rel="shortcut icon" href="http://www.yucezhe.com/img/favicon-32.png">
-    <title>预测者网－分析师量化排名｜见证你和世界的财经预测</title>
+    <title></title>
     <!-- Bootstrap core CSS -->
     <link href="/web/static/css/bootstrap.css" type="text/css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -58,7 +56,7 @@
                                     </p>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="/web/account/logout"><i class="fa fa-sign-out"></i> 登出</a></li>
+                                    <li><a href="/web/logout"><i class="fa fa-sign-out"></i> 登出</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -87,11 +85,11 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/web/account/home" style="padding: 8px; margin: auto; width: 48px; display: block; float: none;"><img style="max-width: 32px; max-height: 32px;" src="/web/static/img/icon-72x72.png" alt="预测者"></a>
+                        <a class="navbar-brand" href="/web/home" style="padding: 8px; margin: auto; width: 48px; display: block; float: none;"><img style="max-width: 32px; max-height: 32px;" src="/web/static/img/icon-72x72.png" alt="预测者"></a>
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li><a class="nav-animate" href="/web/account/home"> 首页</a></li>
+                            <li><a class="nav-animate" href="/web/home"> 首页</a></li>
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -109,7 +107,7 @@
                     </a>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" action="/web/account/resetPwd" id="reset-password-form" method="POST">
+                    <form class="form-horizontal" action="/web/resetPwd" id="reset-password-form" method="POST">
                         <div class="form-group">
                             <div class="col-md-12">
                                 <label for="password0" class="hidden"></label>

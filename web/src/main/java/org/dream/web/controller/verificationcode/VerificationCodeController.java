@@ -9,6 +9,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.dream.utils.email.EmailUtils;
 import org.dream.web.controller.base.BaseController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,5 +61,10 @@ public class VerificationCodeController extends BaseController {
     public void validateCode(String uuid,String code,HttpServletRequest request, HttpServletResponse response) {
         boolean isvalid= imageCaptchaService.validateResponseForID(uuid, code);
         System.out.println(isvalid);
+    }
+    
+    @RequestMapping(value = "/sendEmail")
+    public void sendEmail(HttpServletRequest request){
+        EmailUtils.sendEmail();
     }
 }
