@@ -2,6 +2,14 @@ package org.dream.bean.response;
 
 import com.google.gson.annotations.Expose;
 
+/**
+ * 返回实体
+ *
+ * @author Administrator
+ * @see [相关类/方法]（可选）
+ * @since [产品/模块版本] （可选）
+ * @param <T> 数据
+ */
 public class ResponseBean<T> {
     @Expose
     private String res;

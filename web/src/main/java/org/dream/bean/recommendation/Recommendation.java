@@ -1,6 +1,9 @@
 package org.dream.bean.recommendation;
 
+import java.io.Serializable;
 import java.util.Date;
+
+import com.google.gson.annotations.Expose;
 
 /**
  * 股票推荐
@@ -9,18 +12,26 @@ import java.util.Date;
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */
-public class Recommendation {
-    private int    id;
+public class Recommendation implements Serializable {
+    private static final long serialVersionUID = 1L;
 
-    private double upsDowns;  // 涨跌幅
+    @Expose
+    private int               id;
 
-    private double szUpsDowns; // 上证指数
+    @Expose
+    private double            upsDowns;             // 涨跌幅
 
-    private String ps;        // 备注，大盘判断
+    @Expose
+    private double            szUpsDowns;           // 上证指数
 
-    private String stocks;     // 股票名称
+    @Expose
+    private String            ps;                   // 备注，大盘判断
 
-    private Date   createTime; // 创建时间
+    @Expose
+    private String            stocks;               // 股票名称
+
+    @Expose
+    private Date              createTime;           // 创建时间
 
     /**
      * @return the id
@@ -105,6 +116,4 @@ public class Recommendation {
     public void setStocks(String stocks) {
         this.stocks = stocks;
     }
-
-    
 }

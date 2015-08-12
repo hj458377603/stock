@@ -3,6 +3,7 @@ package org.dream.bean.response;
 import org.dream.bean.errorcode.ErrorCode;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * @param <T> tag
@@ -10,6 +11,7 @@ import com.google.gson.annotations.Expose;
  */
 public class ResultBean<T> {
     @Expose
+    @SerializedName("code")
     private ErrorCode errorCode;
 
     @Expose

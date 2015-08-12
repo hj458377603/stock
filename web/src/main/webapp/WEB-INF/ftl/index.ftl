@@ -217,13 +217,6 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="loadAll">
-            <div class="card2">
-                <div class="p text-center">
-                    <span><i class="fa fa-calendar"></i> 完整选股纪录</span>
-                </div>
-            </div>
-        </div>
     </div>
 
     <h4 class="text-center text-muted" id="stickTitle2" style="position: fixed;top: 0;left: 0; right: 0; display: none; margin: 0; padding: 10px 0 9px 0; background: #f8f8f8; border-bottom: 1px solid #ddd;">
@@ -277,8 +270,9 @@
     <script type="text/javascript" src="/web/static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/web/static/js/responsiveslides.min.js"></script>
     <script type="text/javascript" src="/web/static/js/base.js"></script>
-    <script src="/web/static/js/highcharts.js"></script>
-    <script defer="defer" type="text/javascript">
+    <script type="text/javascript" src="/web/static/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/web/static/js/highcharts.js"></script>
+    <script type="text/javascript">
         $(function () {
             $('#highcharts-0').highcharts({
                 chart: {
@@ -333,5 +327,6 @@
             });
         });
     </script>
+    <script type="text/javascript" src="/web/static/js/home.js"></script>
 </body>
 </html>

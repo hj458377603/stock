@@ -1,5 +1,14 @@
 package org.dream.bean.errorcode;
 
+import com.google.gson.annotations.Expose;
+
+/**
+ * 错误码
+ *
+ * @author Administrator
+ * @see [相关类/方法]（可选）
+ * @since [产品/模块版本] （可选）
+ */
 public enum ErrorCode {
     PARA_EMAIL_ERROR("PARA_0001", "Email格式不正确"),
     PARA_PWD_ERROR("PARA_0002", "密码格式不正确"),
@@ -28,8 +37,10 @@ public enum ErrorCode {
     SYSTEM_400_ERROR("00002","请求出错"),
     SYSTEM_405_ERROR("00003","用来访问本页面的 HTTP谓词不被允许");
     
+    @Expose
     private String code;
 
+    @Expose
     // 成员变量
     private String msg;
 

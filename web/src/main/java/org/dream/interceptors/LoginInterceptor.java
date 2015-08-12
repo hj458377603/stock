@@ -23,7 +23,7 @@ import com.google.gson.GsonBuilder;
 /**
  * 登录拦截器
  * 
- * @author 13071514
+ * @author Adminitstrator
  * @see [相关类/方法]（可选）
  * @since [产品/模块版本] （可选）
  */

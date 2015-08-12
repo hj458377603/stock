@@ -6,19 +6,19 @@ package org.dream.bean.constants;
 public class ConfigConstants {
     public static final String ACCESS_TOKEN              = "ACCESS_TOKEN";
 
-    public static final long   CACHE_EXPIRE_MILI_SECONDS = 3 * 24 * 60 * 60 * 1000;         // 3天
+    public static final long   CACHE_EXPIRE_MILI_SECONDS = 3 * 24 * 60 * 60 * 1000; // 3天
 
-    public static final String FILE_FOLDER               = "/img/";                         // 上传图片文件夹
+    public static final String FILE_FOLDER               = "/img/";                 // 上传图片文件夹
 
-    public static final int    EMAIL_LENGTH              = 40;                              // email长度
+    public static final int    EMAIL_LENGTH              = 40;                      // email长度
 
-    public static final int    PWD_MIN_LENGTH            = 6;                               // 密码最小长度
+    public static final int    PWD_MIN_LENGTH            = 6;                       // 密码最小长度
 
-    public static final int    PWD_MAX_LENGTH            = 40;                              // 密码最大长度
+    public static final int    PWD_MAX_LENGTH            = 40;                      // 密码最大长度
 
-    public static final String DOMAIN                    = "http://localhost:8080";         // 域名
+    public static final String DOMAIN                    = "http://localhost:8080"; // 域名
 
-    public static final String ROOT_CONTEXT              = "/web";                          // 根上下文
+    public static final String ROOT_CONTEXT              = "/web";                  // 根上下文
 
     public static final String HOME_PAGE                 = DOMAIN + "/web/home";    // 首页
 

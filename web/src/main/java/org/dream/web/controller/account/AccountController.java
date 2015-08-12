@@ -97,15 +97,14 @@ public class AccountController extends BaseController {
      */
     @RequestMapping(value = "/home", method = RequestMethod.POST)
     public void doLogin(String email, String pwd, HttpServletRequest request,
-            HttpServletResponse response, ModelMap modelMap, HttpSession httpSession)
-            throws IOException {
+            HttpServletResponse response, ModelMap modelMap, HttpSession httpSession) {
         try {
             Account result = accountBizService.login(email, pwd);
             httpSession.setAttribute(ConfigConstants.ACCOUNT, result);
             modelMap.addAttribute(ConfigConstants.ACCOUNT, result);
             response.sendRedirect(ConfigConstants.HOME_PAGE);
         } catch (StockException e) {
-            response.sendRedirect(ConfigConstants.LOGIN_PAGE + "?msg=email_or_pwd_error");
+            logger.error("StockException doLogin:", e);
         } catch (IOException e) {
             logger.error("doLogin:", e);
         }
