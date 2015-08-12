@@ -63,7 +63,7 @@
                     <#else>
                     <ul class="nav navbar-nav navbar-right user-menu">
                         <li>
-                            <a class="nav-animate" data-toggle="modal" href="http://www.yucezhe.com/beta/public/strategy-1#login-modal">
+                            <a class="nav-animate" data-toggle="modal" href="#login-modal">
                                 <small>登录&nbsp;注册</small>
                             </a>
                         </li>

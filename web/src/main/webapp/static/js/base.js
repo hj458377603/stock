@@ -1,4 +1,3 @@
-
 $(".require-validate").on("blur", function() {
     var tgt = this;
     var val = $.trim(tgt.value);
