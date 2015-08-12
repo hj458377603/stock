@@ -52,7 +52,7 @@ function addMore(data){
     var dom=[
     '{{each}}',
     	'<tr>',
-			'<td>{{$value.createTime}}</td>',
+			'<td>{{$value.createTime.substring(0,10)}}</td>',
 			'{{if $value.upsDowns<0 }}',
 				'<td class="text-success">{{$value.upsDowns}}</td>',
 			'{{ else if $value.upsDowns<10 }}',

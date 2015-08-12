@@ -4,6 +4,8 @@
 <mapper namespace="org.dream.dao.recommendation.RecommendationDao">
 	<resultMap id="recommendationMap" type="org.dream.bean.recommendation.Recommendation">
 		<id property="id" column="id" />
+		<result property="zs" column="zs" />
+		<result property="szZs" column="sz_zs" />
 		<result property="upsDowns" column="ups_downs" />
 		<result property="szUpsDowns" column="sz_ups_downs" />
 		<result property="ps" column="ps" />
@@ -14,6 +16,8 @@
 	<select id="queryRecommendationsByPage" parameterType="java.util.Map" resultMap="recommendationMap">
 		SELECT
 		id,
+		zs,
+		sz_zs,
 		ups_downs,
 		sz_ups_downs,
 		ps,

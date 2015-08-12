@@ -17,12 +17,18 @@ public class Recommendation implements Serializable {
 
     @Expose
     private int               id;
+    
+    @Expose
+    private double            zs;                    // 指数
+    
+    @Expose
+    private double            szZs;                  // 上证指数
 
     @Expose
     private double            upsDowns;             // 涨跌幅
 
     @Expose
-    private double            szUpsDowns;           // 上证指数
+    private double            szUpsDowns;           // 上证指数涨跌幅
 
     @Expose
     private String            ps;                   // 备注，大盘判断
@@ -115,5 +121,33 @@ public class Recommendation implements Serializable {
      */
     public void setStocks(String stocks) {
         this.stocks = stocks;
+    }
+
+    /**
+     * @return the zs
+     */
+    public double getZs() {
+        return zs;
+    }
+
+    /**
+     * @param zs the zs to set
+     */
+    public void setZs(double zs) {
+        this.zs = zs;
+    }
+
+    /**
+     * @return the szZs
+     */
+    public double getSzZs() {
+        return szZs;
+    }
+
+    /**
+     * @param szZs the szZs to set
+     */
+    public void setSzZs(double szZs) {
+        this.szZs = szZs;
     }
 }
